@@ -50,20 +50,21 @@ int _printf(const char *format, ...)
 
 	print_buffer(buffer, &buff_ind);
 
-										va_end(list);
+	va_end(list);
 
-											return (printed_chars);
+	return (printed_chars);
 }
 
 /**
- *  * print_buffer - Prints the contents of the buffer if it exist
- *   * @buffer: Array of chars
- *    * @buff_ind: Index at which to add next char, represents the length.
- *     */
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
+ */
+
 void print_buffer(char buffer[], int *buff_ind)
 {
-		if (*buff_ind > 0)
-					write(1, &buffer[0], *buff_ind);
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
 
-			*buff_ind = 0;
+	*buff_ind = 0;
 }
